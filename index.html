@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css"/>
-    <title>Recipe finder</title>
-
-</head>
-<body>
-    <h1>Recipe finder</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="recipe.html">Recipe</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    <p>Enter an ingredient to find a recipe:</p>
-    <form action="recipe.php" method="post">
-        <!--<label for="ingredient">Enter an ingredient:</label>-->
-        <input type="text" name="ingredient" id="ingredient">
-        <input type="submit" value="Find recipe">
-    </form>
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en-gb">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Recipe Finder</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+        <header>
+            <h1>Recipe Finder</h1>
+        </header>
+        <div class="card">
+            <div class="card-header">
+            <h2></h2>
+            </div>
+            <div class="card-body">
+            <textarea
+                readonly
+                id="password"
+                placeholder="Type in your ingredients here"
+            ></textarea>
+            </div>
+            <div class="card-footer">
+            <button id="generate" class="btn">Find Recipe</button>
+            </div>
+        </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
