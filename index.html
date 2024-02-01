@@ -1,33 +1,27 @@
-    <!DOCTYPE html>
-    <html lang="en-gb">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Recipe Finder</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="wrapper">
-        <header>
-            <h1>Recipe Finder</h1>
-        </header>
-        <div class="card">
-            <div class="card-header">
-            <h2></h2>
-            </div>
-            <div class="card-body">
-            <textarea
-                readonly
-                id="password"
-                placeholder="Type in your ingredients here"
-            ></textarea>
-            </div>
-            <div class="card-footer">
-            <button id="generate" class="btn">Find Recipe</button>
-            </div>
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+    <header>
+        <h1>Recipe Finder</h1>
+    </header>
+        <div class="recipe">
+            <form>
+                <input type="email" name="email" id="mail" placeholder="Type your ingredients in here">
+                <input type="submit" name="submit" value="Find Recipe">
+            </form>
         </div>
-        </div>
-        <script src="script.js"></script>
-    </body>
-    </html>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
