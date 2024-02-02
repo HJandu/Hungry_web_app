@@ -14,8 +14,6 @@ async function fetchDataApi(event) {
     apiKey = "39f57f8117e24c7490a9c443f1f7173b"
     const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue;
 
-    // const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?" + apiKey + "ingredients=apples,+flour,+sugar&number=2"
-
     console.log(queryURL);
 
     try {
@@ -26,33 +24,58 @@ async function fetchDataApi(event) {
 
         const result = await response.json();
         console.log(result);
+        let template = ``;
+        result.forEach((recipe) => {
+            template += `<div class="card col-sm-12 col-md-6" >
+            <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+            <div class="card-body">
+              <h5 class="card-title">${recipe.title}</h5>
+              <button value="${recipe.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
+            </div>
+          </div>`;
+        });
+        document.getElementById("recipe-row").innerHTML = template;
     } catch (error) {
         console.error(error.message);
     }
 }
 
-// var callId = 660261;
-// var queryId = "https://api.spoonacular.com/recipes/" + callId + "/information?apiKey=" + apiKey;
-// // console.log(getRecipe());
+function singleRecipe(event) {
+    console.log(event.target);
+    getRecipe(event.target.value);
+}
+
+
 
 // function to get recipe information
-async function getRecipe() {
-    var response = await fetch(queryId);
-    var data = await response.json();
-    // console.log(data);
-    return data;
+async function getRecipe(callId) {
+    apiKey = "39f57f8117e24c7490a9c443f1f7173b"
+    var queryId = "https://api.spoonacular.com/recipes/" + callId + "/information?apiKey=" + apiKey;
+
+    try {
+        var response = await fetch(queryId);
+        var data = await response.json();
+        console.log(data);
+        let recipeTemplate = `<div class="card mb-3">
+        <img src=${data.image} class="card-img-top" alt=${data.title}>
+        <div class="card-body">
+          <h5 class="card-title">${data.title}</h5>
+          <p class="card-text">${data.summary}</p>
+          ${data.analyzedInstructions[0].steps.map((step) => {
+            return `<p class="card-text">${step.number}. ${step.step}</p>`;   
+          }).join("")}
+        </div>
+      </div>`;
+        document.getElementById("recipe-row").innerHTML = recipeTemplate;
+    } catch (error) {
+        console.error(error);
+
+    }
+
+    // return data;
 }
 
 searchBtn.addEventListener("click", fetchDataApi);
 
 
 
-// getRecipe();
-
-// async function fetch(queryId)
-// .then(function (response) {
-//     return response.json();
-// })
-// .then(function (data) {
-//     console.log(data);
-// });
