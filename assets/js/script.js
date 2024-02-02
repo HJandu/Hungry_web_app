@@ -1,34 +1,53 @@
-apiKey = "954841e26963470e9bbea9401d152fb4"
-var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey +"&ingredients=apples";
+const searchBtn = document.getElementById("searchBtn");
 
-// fetch(queryURL)
-// .then(function (response) {
-//     return response.json();
-// })
-// .then(function (data) {
-//     console.log(data);
-// });
+
 
 // function to reccomened recipes based on ingredients
-async function getOptions() {
-    var response = await fetch(queryURL);
-    var data = await response.json();
-    return data;
+async function fetchDataApi(event) {
+    event.preventDefault();
+    const inputValue = document.getElementById("query").value.trim();
+    if (inputValue === "") {
+        console.log("Please enter an ingredient");
+        return;
+    }
+
+    apiKey = "39f57f8117e24c7490a9c443f1f7173b"
+    const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue;
+
+    // const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?" + apiKey + "ingredients=apples,+flour,+sugar&number=2"
+
+    console.log(queryURL);
+
+    try {
+        const response = await fetch(queryURL);
+        if (!response.ok) {
+            throw Error(`ERROR: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error(error.message);
+    }
 }
 
-var callId = 660261;
-var queryId = "https://api.spoonacular.com/recipes/" +callId + "/information?apiKey=" + apiKey;
-// console.log(getRecipe());
+// var callId = 660261;
+// var queryId = "https://api.spoonacular.com/recipes/" + callId + "/information?apiKey=" + apiKey;
+// // console.log(getRecipe());
 
 // function to get recipe information
 async function getRecipe() {
     var response = await fetch(queryId);
     var data = await response.json();
+    // console.log(data);
     return data;
 }
 
-getOptions();
-getRecipe();
+searchBtn.addEventListener("click", fetchDataApi);
+
+
+
+// getRecipe();
 
 // async function fetch(queryId)
 // .then(function (response) {
