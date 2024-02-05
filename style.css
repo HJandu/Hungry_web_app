@@ -21,6 +21,7 @@ body {
     width: 500px;
     max-width: 100%;
     position: relative;
+    display:flex;
 }
 
 .recipe form input:first-child {
@@ -60,7 +61,7 @@ header {
     color: white;
 }
 
-.btn {
+#searchBtn {
     border: none;
     background-color: black;
     border-radius: 25px;
