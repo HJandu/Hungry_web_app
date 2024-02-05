@@ -26,15 +26,16 @@ async function fetchDataApi(event) {
         console.log(result);
         let template = ``;
         result.forEach((recipe) => {
-            template += `<div class="card col-sm-12 col-md-6" >
+            template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
               <h5 class="card-title">${recipe.title}</h5>
+              <p class="card-text">Likes: ${recipe.likes}</p>
               <button value="${recipe.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
             </div>
           </div>`;
         });
-        document.getElementById("recipe-row").innerHTML = template;
+        document.getElementById("row-test").innerHTML = template;
     } catch (error) {
         console.error(error.message);
     }
@@ -56,17 +57,21 @@ async function getRecipe(callId) {
         var response = await fetch(queryId);
         var data = await response.json();
         console.log(data);
-        let recipeTemplate = `<div class="card mb-3">
-        <img src=${data.image} class="card-img-top" alt=${data.title}>
-        <div class="card-body">
-          <h5 class="card-title">${data.title}</h5>
-          <p class="card-text">${data.summary}</p>
-          ${data.analyzedInstructions[0].steps.map((step) => {
-            return `<p class="card-text">${step.number}. ${step.step}</p>`;   
-          }).join("")}
-        </div>
-      </div>`;
-        document.getElementById("recipe-row").innerHTML = recipeTemplate;
+        // save data to local storage
+        window.localStorage.setItem("recipe", JSON.stringify(data));
+
+      //   let recipeTemplate = `<div class="card mb-3">
+      //   <img src=${data.image} class="card-img-top" alt=${data.title}>
+      //   <div class="card-body">
+      //     <h5 class="card-title">${data.title}</h5>
+      //     <p class="card-text">${data.summary}</p>
+      //     ${data.analyzedInstructions[0].steps.map((step) => {
+      //       return `<p class="card-text">${step.number}. ${step.step}</p>`;   
+      //     }).join("")}
+      //   </div>
+      // </div>`;
+      window.location.href = "./recipes.html";
+        // document.getElementById("full-recipe").innerHTML = recipeTemplate;
     } catch (error) {
         console.error(error);
 
@@ -76,6 +81,3 @@ async function getRecipe(callId) {
 }
 
 searchBtn.addEventListener("click", fetchDataApi);
-
-
-

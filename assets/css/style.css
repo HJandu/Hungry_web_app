@@ -60,6 +60,13 @@ header {
     color: white;
 }
 
+h1{
+    text-align: left;
+    padding: 20px;
+    padding-top: 0px;
+    color: white;
+}
+
 button#searchBtn {
     border: none;
     background-color: black;
@@ -74,5 +81,29 @@ button#searchBtn {
     text-align: center;
     cursor: pointer;
     max-width: 100%;
-    
+
+}
+
+button.backBtn {
+    border: none;
+    background-color: black;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+div.card.col-sm-12.col-md-6 {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-color: #868686;
+    border-radius: 10px;
 }
