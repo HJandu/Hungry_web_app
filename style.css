@@ -17,11 +17,37 @@ body {
     background-repeat: no-repeat;
 }
 
+.navbar{
+	display: flex;
+}
+.navbar li{
+	position: relative;
+}
+.navbar a{
+	color: #fff;
+	font-weight: bold;
+	font-size: 1rem;
+	padding: 10px 20px;
+}
+.navbar a::after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	background: rgba(245, 245, 245, 0.763);
+	left: 0;
+	bottom: -4px;
+	transition: ease .40s;
+}
+.navbar a:hover::after{
+	width: 100%;
+}
+
 .recipe form {
     width: 500px;
     max-width: 100%;
     position: relative;
-    display:flex;
+    display: flex;
 }
 
 .recipe form input:first-child {

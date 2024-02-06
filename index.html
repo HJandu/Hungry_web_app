@@ -7,17 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Recipe Finder</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-    <header>
-        <h1>Recipe Finder</h1>
-    </header>
+        <header>
+            <h1>Recipe Finder</h1>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Saved</a></li>
+                </ul>
+                <a href="#" class="h-btn">
+            </nav>
+        </header>
+        
         <div class="recipe">
             <form>
                 <input type="text" name="query" id="query" placeholder="Type your ingredients here">
-                <button  id="searchBtn" type="submit">Find Recipe</button>
+                <button id="searchBtn" type="submit">Find Recipe</button>
             </form>
         </div>
     </div>
