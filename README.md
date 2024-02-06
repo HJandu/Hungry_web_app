@@ -1,3 +1,5 @@
 # front-end-project1
 
-Hi- Victoria Adeyemi
+HTML
+CSS
+javaScript
