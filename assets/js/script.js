@@ -57,19 +57,20 @@ async function fetchPopular(event) {
             throw Error(`ERROR: ${response.statusText}`);
         }
 
-        const data = await response.json();
-        console.log(data);
+        const dataCollected = await response.json();
+        
+        console.log(dataCollected);
         let template = ``;
-        // result.forEach((recipe) => {
-        //     template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
-        //     <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
-        //     <div class="card-body">
-        //       <h5 class="card-title">${recipe.title}</h5>
-        //       <p class="card-text">Likes: ${recipe.likes}</p>
-        //       <button value="${recipe.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
-        //     </div>
-        //   </div>`;
-        // });
+        dataCollected.forEach((recipe) => {
+            template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
+            <img src="${data.recipes.images}" class="card-img-top" alt="${data.recipes.title}">
+            <div class="card-body">
+              <h5 class="card-title">${data.recipes.title}</h5>
+              <p class="card-text">Likes: ${data.recipes.servings}</p>
+              <button value="${data.recipes.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
+            </div>
+          </div>`;
+        });
         // document.getElementById("row-test").innerHTML = template;
     } catch (error) {
         console.error(error.message);
