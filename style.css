@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
 
 
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
 h1 {
     font-family: 'Protest Riot', sans-serif;
-    font-size: 3rem;
+    font-size: 5rem;
+    color:white;
 }
 
 * {
@@ -23,6 +30,10 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+ul{
+    list-style: none;
 }
 
 .navbar {
@@ -58,6 +69,7 @@ body {
 
 .recipe {
     display: flex;
+    margin-top: 20px;
 }
 
 .recipe input {
