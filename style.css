@@ -114,10 +114,10 @@ header {
 
 #searchBtn {
     border: none;
-    background-color: black;
+    background-color:white;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-    color: hsl(0, 0%, 100%);
+    /* color: hsl(0, 0%, 100%); */
     display: flex;
     font-size: 12px;
     line-height: 22px;
