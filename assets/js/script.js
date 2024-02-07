@@ -11,8 +11,10 @@ async function fetchDataApi(event) {
         return;
     }
 
-    apiKey = "39f57f8117e24c7490a9c443f1f7173b"
+    apiKey = "f0dd859c032e46be87e35cfff5c947f2"
     const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue;
+
+    // const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=5";
 
     console.log(queryURL);
 
@@ -41,6 +43,41 @@ async function fetchDataApi(event) {
     }
 }
 
+// function to display popular recipes
+async function fetchPopular(event) {
+    // event.preventDefault();
+    apiKey = "f0dd859c032e46be87e35cfff5c947f2"
+    const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=6";
+
+    console.log(randomURL);
+
+    try {
+        const response = await fetch(randomURL);
+        if (!response.ok) {
+            throw Error(`ERROR: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        let template = ``;
+        // result.forEach((recipe) => {
+        //     template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
+        //     <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
+        //     <div class="card-body">
+        //       <h5 class="card-title">${recipe.title}</h5>
+        //       <p class="card-text">Likes: ${recipe.likes}</p>
+        //       <button value="${recipe.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
+        //     </div>
+        //   </div>`;
+        // });
+        // document.getElementById("row-test").innerHTML = template;
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+fetchPopular();
+
+
 function singleRecipe(event) {
     console.log(event.target);
     getRecipe(event.target.value);
@@ -50,7 +87,7 @@ function singleRecipe(event) {
 
 // function to get recipe information
 async function getRecipe(callId) {
-    apiKey = "39f57f8117e24c7490a9c443f1f7173b"
+    apiKey = "f0dd859c032e46be87e35cfff5c947f2"
     var queryId = "https://api.spoonacular.com/recipes/" + callId + "/information?apiKey=" + apiKey;
 
     try {
