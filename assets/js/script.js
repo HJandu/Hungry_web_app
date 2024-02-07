@@ -1,3 +1,5 @@
+const apiKey = "a30e63b957014f2d9735e62145cf010c";
+
 const searchBtn = document.getElementById("searchBtn");
 
 
@@ -10,8 +12,6 @@ async function fetchDataApi(event) {
         console.log("Please enter an ingredient");
         return;
     }
-
-    apiKey = "f0dd859c032e46be87e35cfff5c947f2"
     const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue;
 
     // const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=5";
@@ -46,7 +46,6 @@ async function fetchDataApi(event) {
 // function to display popular recipes
 async function fetchPopular(event) {
     // event.preventDefault();
-    apiKey = "f0dd859c032e46be87e35cfff5c947f2"
     const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=6";
 
     console.log(randomURL);
@@ -88,7 +87,6 @@ function singleRecipe(event) {
 
 // function to get recipe information
 async function getRecipe(callId) {
-    apiKey = "f0dd859c032e46be87e35cfff5c947f2"
     var queryId = "https://api.spoonacular.com/recipes/" + callId + "/information?apiKey=" + apiKey;
 
     try {

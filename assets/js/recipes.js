@@ -1,10 +1,11 @@
+const apiKey = "a30e63b957014f2d9735e62145cf010c";
 const recipeDetails = document.getElementById("recipeDetails");
 
 // display the chosen recipe details
 function displayRecipe() {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   console.log(fullRecipe);
-  let recipeTemplate = `<div class="card mb-3">
+  let recipeTemplate = `<div class="card border border-0 mb-3">
   <div class="row g-0">
     <div class="col-md-4">
       <img src=${fullRecipe.image} class="img-fluid rounded-start" alt=${fullRecipe.title}>
@@ -12,19 +13,30 @@ function displayRecipe() {
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">${fullRecipe.title}</h5>
-        <p class="card-text"><ins>Instructions</ins></p>
-        <p class="card-text">${fullRecipe.analyzedInstructions[0].steps.map((step) => {
-            return `<p class="card-text">${step.number}. ${step.step}</p>`;
-          }).join("")}</p>
-        <p class="card-text"></p>
-        <p class="card-text"><ins>Diets:</ins> ${fullRecipe.diets}</p>
-        <p class="card-text"><ins>Number of Servings:</ins> ${fullRecipe.servings}</p>
+        <p class="card-text">Ready in Minutes: ${fullRecipe.readyInMinutes}</p>
+        <p class="card-text">Ingredients:</p>
+        <ul class="list-group list-group-flush">${fullRecipe.extendedIngredients.map((ingredient) => {
+            return `<li class="list-group-item">${ingredient.original}</li>`;
+          }
+        ).join("")}</ul>        
       </div>
     </div>
   </div>
 </div>`;
+const instructionsTemplate = `<div class="card border border-0">
+<div class="card-body">
+  <h5 class="card-title">Instructions</h5>
+        <p class="card-text">${fullRecipe.analyzedInstructions[0].steps.map((step) => {
+            return `<p class="card-text">${step.number}. ${step.step}</p>`;
+          }).join("")}</p>
+        <p class="card-text"></p>
+        <p class="card-text">Diets: ${fullRecipe.diets}</p>
+        <p class="card-text">Number of Servings: ${fullRecipe.servings}</p>
+</div>
+</div>`
 
   document.getElementById("recipeInfo").innerHTML = recipeTemplate;
+  document.getElementById("instructions").innerHTML = instructionsTemplate;
 }
 displayRecipe();
 
@@ -41,8 +53,7 @@ function singleRecipe(event) {
 async function getPricing(callId) {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const priceId = fullRecipe.id;
-  apiKey = "f0dd859c032e46be87e35cfff5c947f2"
-  // "39f57f8117e24c7490a9c443f1f7173b"
+ 
   let priceURL = "https://api.spoonacular.com/recipes/" + priceId + "/priceBreakdownWidget.json?apiKey=" + apiKey;
 
   try {
@@ -50,21 +61,21 @@ async function getPricing(callId) {
       var data = await response.json();
       console.log(data);
       let priceTemplate = `<div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card">
+        <div class="card border border-0">
           <div class="card-body">
-            <h5 class="card-title"><ins>Price Breakdown</ins></h5>
-            <p class="card-text">Ingredients: ${data.ingredients.map((ingredient) => {
-              return `<p class="card-text">${ingredient.name}: ${ingredient.price}</p>`;
+            <h5 class="card-title">Price Breakdown</h5>
+            <p class="card-text">${data.ingredients.map((ingredient) => {
+              return `<p class="card-text">${ingredient.name}: $${ingredient.price}</p>`;
             }).join("")}</p>
-            <p class="card-text">Total Cost: ${data.totalCost}</p>
-            <p class="card-text">Total Cost Per Serving: ${data.totalCostPerServing}</p>
+            <p class="card-text">Total Cost: $${data.totalCost}</p>
+            <p class="card-text">Total Cost Per Serving: $${data.totalCostPerServing}</p>
           </div>
         </div>
       </div>`
       //create a div to hold the price breakdown
 
-      // recipeDetails.appendChild(priceTemplate);
-      // document.getElementById("price").innerHTML = priceTemplate;
+     
+      document.getElementById("price").innerHTML = priceTemplate;
     } catch (error) {
       console.error(error);
   }
@@ -76,18 +87,16 @@ getPricing();
 async function getNutrition(callId) {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const nutritionId = fullRecipe.id;
-  apiKey = "f0dd859c032e46be87e35cfff5c947f2"
-  // "39f57f8117e24c7490a9c443f1f7173b"
+ 
   let nutURL = "https://api.spoonacular.com/recipes/" + nutritionId + "/nutritionWidget.json?apiKey=" + apiKey; 
 
   try {
       var response = await fetch(nutURL);
       var data = await response.json();
       console.log(data);
-      let nutritionTemplate = `<div class="col-sm-6">
-        <div class="card">
+      let nutritionTemplate = `<div class="card border border-0">
           <div class="card-body">
-            <h5 class="card-title"><ins>Nutrition per Serving</ins></h5>
+            <h5 class="card-title">Nutrition per Serving</h5>
             <p class="card-text">Calories: ${data.calories}</p>
             <p class="card-text">Carbohydrates: ${data.carbs}</p>
             <p class="card-text">Protein: ${data.protein}</p>
@@ -95,9 +104,8 @@ async function getNutrition(callId) {
             <p class="card-text">Saturated Fat: ${data.bad[2].amount}</p>
           </div>
         </div>
-      </div>
-    </div>`
-      // document.getElementById("nut-chart").innerHTML = nutritionTemplate;
+      </div>`
+      document.getElementById("nut-chart").innerHTML = nutritionTemplate;
     } catch (error) {
       console.error(error);
   }
@@ -110,8 +118,7 @@ getNutrition();
 async function getSimilar(callId) {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const similarRecipesId = fullRecipe.id;
-  apiKey = "f0dd859c032e46be87e35cfff5c947f2"
-  // "39f57f8117e24c7490a9c443f1f7173b"
+
   let similarRecipesURL = "https://api.spoonacular.com/recipes/" + similarRecipesId + "/similar?apiKey=" + apiKey;
   
   try {
@@ -126,7 +133,7 @@ async function getSimilar(callId) {
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="...">
+          <img src="/images/food-dwc-2.avif" class="d-block w-100" alt="golden syrup on pancakes">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[0].title}</h5>
             <p>Ready in Minutes: ${data[0].readyInMinutes}</p>
@@ -134,7 +141,7 @@ async function getSimilar(callId) {
           </div>
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
+          <img src="" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[1].title}</h5>
             <p>Ready in Minutes: ${data[1].readyInMinutes}</p>
@@ -159,7 +166,7 @@ async function getSimilar(callId) {
         <span class="visually-hidden">Next</span>
       </button>
     </div>`
-    // document.getElementById("similar").innerHTML = similarRecipesTemplate;
+    document.getElementById("similar").innerHTML = similarRecipesTemplate;
     } catch (error) {
       console.error(error);
   }
