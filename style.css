@@ -19,6 +19,7 @@ body {
 
 .navbar{
 	display: flex;
+    justify-content: flex-end;
 }
 .navbar li{
 	position: relative;
@@ -43,15 +44,14 @@ body {
 	width: 100%;
 }
 
-.recipe form {
-    width: 500px;
-    max-width: 100%;
-    position: relative;
-    display: flex;
-}
+.recipe
 
-.recipe form input:first-child {
-    display: inline-block;
+
+.recipe input {
+    width: 100px;
+    max-width: 30%;
+    position: relative;
+    display: flex; 
     width: 100%;
     outline: none;
     padding: 16px 140px 16px 15px;
@@ -59,7 +59,7 @@ body {
     border-radius: 30px;
 }
 
-.recipe form input:last-child {
+/* .recipe form input:last-child {
     position: absolute;
     display: inline-block;
     outline: none;
@@ -72,7 +72,7 @@ body {
     cursor: pointer;
     top: 3px;
     right: 6px;
-}
+} */
 
 .wrapper {
     padding-top: 30px;
@@ -93,7 +93,7 @@ header {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     color: hsl(0, 0%, 100%);
-    display: inline-block;
+    display: flex;
     font-size: 22px;
     line-height: 22px;
     margin: 16px 16px 16px 20px;
