@@ -11,7 +11,7 @@
 body {
     font-family: sans-serif;
     background-color: black;
-    background-image: url(/images/Food\ dwc.jpg);
+    background-image: url(/images/food-dwc-bright.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,15 +48,15 @@ body {
 
 
 .recipe input {
-    width: 100px;
+    width: 300px;
     max-width: 30%;
     position: relative;
     display: flex; 
-    width: 100%;
     outline: none;
     padding: 16px 140px 16px 15px;
     border: 2px solid var(--main-color);
     border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
 }
 
 /* .recipe form input:last-child {
@@ -94,10 +94,11 @@ header {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     color: hsl(0, 0%, 100%);
     display: flex;
-    font-size: 22px;
+    font-size: 12px;
     line-height: 22px;
     margin: 16px 16px 16px 20px;
-    padding: 14px 34px;
+    padding: 14px 24px;
     text-align: center;
     cursor: pointer;
+    position: absolute;
 }
