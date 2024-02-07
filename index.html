@@ -1,37 +1,107 @@
 <!DOCTYPE html>
-<html lang="en-gb">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recipe Finder</title>
-    <link rel="stylesheet" href="style.css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="tablet.css" rel="stylesheet" type="text/css" media="screen and (max-width:800px)">
+    <link href="phone.css" rel="stylesheet" type="text/css" media="screen and (max-width:530px)">
+    <script src="https://kit.fontawesome.com/ef6c64c6bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="boxicons.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?
+    family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>Recipe Finder</h1>
-            <nav>
-                <ul class="navbar">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Saved</a></li>
-                </ul>
-                <a href="#" class="h-btn">
-            </nav>
-        </header>
-        
-        <div class="recipe">
+    <header>
+        <a href="#" class="logo">#<span>Hungry</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services"></a></li>
+        </ul>
+        <a href="#" class="h-btn">Account</a>
+    </header>
+
+    <!------start home------>
+    <section class="home" id="home">
+        <div class="newsletter">
             <form>
-                <input type="text" name="query" id="query" placeholder="Type your ingredients here">
-                <button id="searchBtn" type="submit">Find Recipe</button>
+                <input type="" name="email" id="mail" placeholder="Enter Your Ingredients">
+                <input type="submit" name="submit" value="Search">
             </form>
         </div>
+        </div>
+    </section>
+
+    <!------My Services Page------>
+    <section class="services" id="services">
+        <div class="center">
+            <h2>Popular<span> Recipes</span></h2>
+        </div>
+
+        <div class="service-content">
+            <div class="row">
+                <h3>Healthy Salmon Pasta</h3>
+                <p> not sure what to write here</p>
+            </div>
+
+            <div class="row">
+                <h3>Healthy Pesto Eggs on Toats</h3>
+                <p> not sure what to write here</p>
+            </div>
+
+            <div class="row">
+                <h3>Healthy Chicken Stir Fry</h3>
+                <p> not sure what to write here</p>
+            </div>
+
+            <div class="row">
+                <h3>Chicken Satay Salad</h3>
+                <p> not sure what to write here</p>
+            </div>
+
+            <div class="row">
+                <h3>Healthy Bolognese</h3>
+                <p> not sure what to write here</p>
+            </div>
+
+            <div class="row">
+                <h3>Bombay Potatoe Fishcakes</h3>
+                <p> not sure what to write here</p>
+            </div>
+        </div>
+    </section>
+
+    <!------Contact Page------>
+    <section class="contact" id="contact">
+        <div class="contact-form">
+            <h2>Sign Up To Newsletter</h2>
+            <form action="">
+                <input type="" placeholder="Your Name" required>
+                <input type="email" name="" id="" placeholder="Your Email" required>
+                <input type="submit" name="" value="Submit" class="send">
+            </form>
+        </div>
+    </section>
+
+    <!------Footer------>
+    <div class="footer">
+        <p>Copyright © 2022 #Hungry. All Rights Reserved</p>
     </div>
-    <script src="script.js"></script>
+
+
+
+    <!------link to javascript------>
+    <script type="text/javascript" src="static/js/script.js"></script>
+
 </body>
 
 </html>
