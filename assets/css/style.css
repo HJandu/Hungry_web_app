@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+h1 {
+    font-family: 'Protest Riot', sans-serif;
+    font-size: 5rem;
+    color:white;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -10,29 +25,66 @@
 
 body {
     font-family: sans-serif;
-    background-color: black;
-    background-image: url(../images/Food\ dwc.jpg);
+    background-color: white;
+    background-image: url(./images/food-dwc-spread.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.recipe form {
-    width: 500px;
-    max-width: 100%;
+ul{
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar li {
     position: relative;
 }
 
-.recipe form input:first-child {
-    display: inline-block;
+.navbar a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgba(245, 245, 245, 0.763);
+    left: 0;
+    bottom: -4px;
+    transition: ease .40s;
+}
+
+.navbar a:hover::after {
     width: 100%;
+}
+
+.recipe {
+    display: flex;
+    margin-top: 20px;
+}
+
+.recipe input {
+    width: 500px;
+    /* max-width: 50%; */
+    position: relative;
+    display: flex;
     outline: none;
     padding: 16px 140px 16px 15px;
     border: 2px solid var(--main-color);
     border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
 }
 
-.recipe form input:last-child {
+/* .recipe form input:last-child {
     position: absolute;
     display: inline-block;
     outline: none;
@@ -43,9 +95,9 @@ body {
     border-radius: 30px;
     box-shadow: 0px 0px 6px #000, 0px 0px 14px #868686;
     cursor: pointer;
-    top: 6px;
+    top: 3px;
     right: 6px;
-}
+} */
 
 .wrapper {
     padding-top: 30px;
@@ -60,50 +112,18 @@ header {
     color: white;
 }
 
-h1{
-    text-align: left;
-    padding: 20px;
-    padding-top: 0px;
-    color: white;
-}
-
-button#searchBtn {
+#searchBtn {
     border: none;
-    background-color: black;
+    background-color:white;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-    color: hsl(0, 0%, 100%);
-    display: inline-block;
-    font-size: 22px;
+    /* color: hsl(0, 0%, 100%); */
+    display: flex;
+    font-size: 12px;
     line-height: 22px;
-    margin: 16px 16px 16px 20px;
-    padding: 14px 34px;
+    /* margin: 16px 16px 16px 20px; */
+    padding: 14px 24px;
     text-align: center;
     cursor: pointer;
-    max-width: 100%;
-
-}
-
-button.backBtn {
-    border: none;
-    background-color: black;
-    border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-    color: hsl(0, 0%, 100%);
-    display: inline-block;
-    font-size: 22px;
-    line-height: 22px;
-    margin: 16px 16px 16px 20px;
-    padding: 14px 34px;
-    text-align: center;
-    cursor: pointer;
-    max-width: 100%;
-}
-
-div.card.col-sm-12.col-md-6 {
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    border-color: #868686;
-    border-radius: 10px;
+    /* position: absolute; */
 }
