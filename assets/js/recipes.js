@@ -1,4 +1,4 @@
-const apiKey = "a30e63b957014f2d9735e62145cf010c";
+const apiKey = "0ee8b356da4647dda7b2c230e4b0e205";
 const recipeDetails = document.getElementById("recipeDetails");
 
 // display the chosen recipe details
