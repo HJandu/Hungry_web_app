@@ -307,3 +307,50 @@ header {
     cursor: pointer;
     /* position: absolute; */
 }
+
+.row{
+    display: flex;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+#recipe-row, #recipeInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.backBtn{
+    border: none;
+    background-color:white;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    /* color: hsl(0, 0%, 100%); */
+    display: flex;
+    font-size: 12px;
+    line-height: 22px;
+    /* margin: 16px 16px 16px 20px; */
+    padding: 14px 24px;
+    text-align: center;
+    cursor: pointer;
+    /* position: absolute; */
+    margin-top: 40px;
+}
+
+#header {
+    display: flex;
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+.h4 {
+    width: 500px;
+    max-width: 50%;
+    position: relative;
+    display: flex;
+    outline: none;
+    padding: 16px 140px 16px 15px;
+    border: 2px solid var(--main-color);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+} 
