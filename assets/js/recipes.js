@@ -1,4 +1,4 @@
-const apiKey = "a30e63b957014f2d9735e62145cf010c";
+const apiKey = "a2ea6436918641a693f624d3818a0438";
 const recipeDetails = document.getElementById("recipeDetails");
 
 // display the chosen recipe details
@@ -133,7 +133,7 @@ async function getSimilar(callId) {
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/images/food-dwc-2.avif" class="d-block w-100" alt="golden syrup on pancakes">
+          <img src="./images/food-dwc-4.jpg" class="d-block w-100" alt="golden syrup on pancakes">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[0].title}</h5>
             <p>Ready in Minutes: ${data[0].readyInMinutes}</p>
@@ -141,7 +141,7 @@ async function getSimilar(callId) {
           </div>
         </div>
         <div class="carousel-item">
-          <img src="" class="d-block w-100" alt="...">
+          <img src=${data[2].sourceUrl} class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[1].title}</h5>
             <p>Ready in Minutes: ${data[1].readyInMinutes}</p>
@@ -166,7 +166,7 @@ async function getSimilar(callId) {
         <span class="visually-hidden">Next</span>
       </button>
     </div>`
-    document.getElementById("similar").innerHTML = similarRecipesTemplate;
+    document.getElementById("similar-recipes").innerHTML = similarRecipesTemplate;
     } catch (error) {
       console.error(error);
   }

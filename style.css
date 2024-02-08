@@ -5,10 +5,6 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.377);
-    text-align: left;
-    padding: 20px;
-    padding-top: 0px;
-    color: white;
 }
 
 h1 {
@@ -30,7 +26,7 @@ h1 {
 body {
     font-family: sans-serif;
     background-color: white;
-    background-image: url(/images/food-dwc-spread.jpg);
+    background-image: url(images/food-dwc-spread.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,8 +69,7 @@ ul{
 
 .recipe {
     display: flex;
-    margin-top: 40px;
-    background-color: rgba(0, 0, 0, 0.377);
+    margin-top: 20px;
 }
 
 .recipe input {

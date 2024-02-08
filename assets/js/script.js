@@ -1,4 +1,4 @@
-const apiKey = "a30e63b957014f2d9735e62145cf010c";
+const apiKey = "a2ea6436918641a693f624d3818a0438";
 
 const searchBtn = document.getElementById("searchBtn");
 
@@ -44,7 +44,7 @@ async function fetchDataApi(event) {
 }
 
 // function to display popular recipes
-async function fetchPopular(event) {
+async function fetchPopular() {
     // event.preventDefault();
     const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=6";
 
@@ -57,28 +57,37 @@ async function fetchPopular(event) {
         }
 
         const dataCollected = await response.json();
-        
+
         console.log(dataCollected);
-        let template = ``;
-        dataCollected.forEach((recipe) => {
+        let template = ""; // initialize template variable
+        for (let i = 0; i < dataCollected.recipes.length; i++) {
+            const recipe = dataCollected.recipes[i];
             template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
-            <img src="${data.recipes.images}" class="card-img-top" alt="${data.recipes.title}">
+            <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
-              <h5 class="card-title">${data.recipes.title}</h5>
-              <p class="card-text">Likes: ${data.recipes.servings}</p>
-              <button value="${data.recipes.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
-            </div>
-          </div>`;
-        });
-        // document.getElementById("row-test").innerHTML = template;
+              <h5 class="card-title
+                ">${recipe.title}</h5>
+                <p class="card-text">Likes: ${recipe.servings}</p>
+                <button value="${recipe.id}" onclick="randomRecipe(event)" class="btn btn-primary">View Recipe</button>
+                </div>
+                </div>`;
+        }
+        document.getElementById("popularRecipes").innerHTML = template;
+        
     } catch (error) {
         console.error(error.message);
     }
 }
+
 fetchPopular();
 
 
 function singleRecipe(event) {
+    console.log(event.target);
+    getRecipe(event.target.value);
+}
+
+function randomRecipe(event) {
     console.log(event.target);
     getRecipe(event.target.value);
 }
@@ -96,17 +105,17 @@ async function getRecipe(callId) {
         // save data to local storage
         window.localStorage.setItem("recipe", JSON.stringify(data));
 
-      //   let recipeTemplate = `<div class="card mb-3">
-      //   <img src=${data.image} class="card-img-top" alt=${data.title}>
-      //   <div class="card-body">
-      //     <h5 class="card-title">${data.title}</h5>
-      //     <p class="card-text">${data.summary}</p>
-      //     ${data.analyzedInstructions[0].steps.map((step) => {
-      //       return `<p class="card-text">${step.number}. ${step.step}</p>`;   
-      //     }).join("")}
-      //   </div>
-      // </div>`;
-      window.location.href = "./recipes.html";
+        //   let recipeTemplate = `<div class="card mb-3">
+        //   <img src=${data.image} class="card-img-top" alt=${data.title}>
+        //   <div class="card-body">
+        //     <h5 class="card-title">${data.title}</h5>
+        //     <p class="card-text">${data.summary}</p>
+        //     ${data.analyzedInstructions[0].steps.map((step) => {
+        //       return `<p class="card-text">${step.number}. ${step.step}</p>`;   
+        //     }).join("")}
+        //   </div>
+        // </div>`;
+        window.location.href = "./recipes.html";
         // document.getElementById("full-recipe").innerHTML = recipeTemplate;
     } catch (error) {
         console.error(error);
