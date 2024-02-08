@@ -14,8 +14,6 @@ async function fetchDataApi(event) {
     }
     const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue;
 
-    // const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=5";
-
     console.log(queryURL);
 
     try {
