@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Recipe Finder</title>
+    <title>HUNGRY!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,21 +14,24 @@
 </head>
 
 <body>
-    <header>
-        <h1>Hungry!</h1>
-        <nav>
-            <ul class="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Saved</a></li>
-            </ul>
-            <a href="#" class="h-btn">
-        </nav>
-    </header>
-    <div id="header" class="title">
-        <h3>Here is your chosen recipe. <br>
-            Enjoy!</h3>
-        <a href="index.html"><button class="backBtn">Go Back</button></a>
+    <div class="wrapper">
+        <header>
+            <h1>HUNGRY!</h1>
+            <h3>
+                <nav>
+                    <ul class="navbar">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">Saved Recipes</a></li>
+                        <li><a href="#services">About Us</a></li>
+                    </ul>
+            </h3>
+            <!-- <a href="#" class="h-btn"> -->
+            </nav>
+        </header>
+        <!-- <div id="header" class="chosen-recipe">
+        <h4>Here is your chosen recipe. <br>
+            Enjoy!</h4> -->
+        <a href="index.html"><button class="backBtn">Back to Homepage</button></a>
     </div>
     <div class="container bg-white">
         <div class="row" id="recipeInfo">
@@ -41,8 +44,8 @@
             </div>
             <div id="nut-chart" class="col-sm-12 col-md-4">
 
-           </div>
-            
+            </div>
+
         </div>
         <div class="row" id="price">
 
@@ -59,12 +62,12 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src="./assets/js/recipes.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/api.js"></script>
+        <script src="./assets/js/recipes.js"></script>
 </body>
 
 </html>
