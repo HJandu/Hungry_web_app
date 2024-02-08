@@ -1,5 +1,10 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 
 header {
     display: flex;
@@ -190,11 +195,7 @@ header {
 h1 {
     font-family: 'Protest Riot', sans-serif;
     font-size: 5rem;
-    color:white;
-}
-
-* {
-    box-sizing: border-box;
+    color: white;
 }
 
 .wrapper {
@@ -212,7 +213,7 @@ body {
     background-repeat: no-repeat;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
@@ -294,12 +295,13 @@ header {
 
 #searchBtn {
     border: none;
-    background-color:white;
+    background-color: white;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     /* color: hsl(0, 0%, 100%); */
     display: flex;
     font-size: 12px;
+    font-weight: bold;
     line-height: 22px;
     /* margin: 16px 16px 16px 20px; */
     padding: 14px 24px;
@@ -308,21 +310,31 @@ header {
     /* position: absolute; */
 }
 
-.row{
+
+h6 {
+        display: flex;
+        text-align: centre;
+        background-color: rgba(51, 46, 46, 0.534);
+        margin-top: 60px;
+        font-size: xx-large;
+        color: white;
+    }
+
+.row {
     display: flex;
     margin-top: 60px;
-    background-color: rgba(0, 0, 0, 0.377);
 }
 
-#recipe-row, #recipeInfo {
+#recipe-row,
+#recipeInfo {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.backBtn{
+.backBtn {
     border: none;
-    background-color:white;
+    background-color: white;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     /* color: hsl(0, 0%, 100%); */
@@ -353,4 +365,37 @@ header {
     border: 2px solid var(--main-color);
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-} 
+}
+
+h5.card-title {
+    color: rgb(40, 59, 7);
+    weight: bold;
+}
+
+#popularRecipes{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+.carousel.slide {
+    display: flex;
+    margin-top: 40px;
+    width: 800px;
+}
+.carousel-caption.d-none.d-md-block h5 {
+    color: black;
+}
+.carousel-caption.d-none.d-md-block p {
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .recipe input {
+        width: 100%;
+    }
+    .navbar {
+        display: none;
+    }
+}
