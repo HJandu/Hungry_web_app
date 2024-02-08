@@ -28,7 +28,7 @@ async function fetchDataApi(event) {
         console.log(result);
         let template = ``;
         result.forEach((recipe) => {
-            template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
+            template += `<div class="card col-sm-12 col-md-6 col-md-4" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
               <h5 class="card-title">${recipe.title}</h5>
@@ -37,7 +37,7 @@ async function fetchDataApi(event) {
             </div>
           </div>`;
         });
-        document.getElementById("row-test").innerHTML = template;
+        document.getElementById("recipe-row").innerHTML = template;
     } catch (error) {
         console.error(error.message);
     }
@@ -62,17 +62,17 @@ async function fetchPopular() {
         let template = ""; // initialize template variable
         for (let i = 0; i < dataCollected.recipes.length; i++) {
             const recipe = dataCollected.recipes[i];
-            template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
+            template += `<div class="card col-sm-12 col-md-6">
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
               <h5 class="card-title
                 ">${recipe.title}</h5>
-                <p class="card-text">Likes: ${recipe.servings}</p>
+                <p class="card-text">Servings: ${recipe.servings}</p>
                 <button value="${recipe.id}" onclick="randomRecipe(event)" class="btn btn-primary">View Recipe</button>
                 </div>
                 </div>`;
         }
-        document.getElementById("popularRecipes").innerHTML = template;
+        document.getElementById("popular-recipe-row").innerHTML = template;
         
     } catch (error) {
         console.error(error.message);
