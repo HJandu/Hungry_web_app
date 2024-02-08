@@ -69,7 +69,8 @@ ul{
 
 .recipe {
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.377);
 }
 
 .recipe input {
