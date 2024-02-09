@@ -365,6 +365,23 @@ h6 {
     border: 2px solid var(--main-color);
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+} 
+
+/* styling the carousel */
+.carousel.slide {
+    
+    display: flex;
+    margin-top: 10px;
+    width: 800px;
+}
+
+.carousel-caption.d-none.d-md-block h5 {
+    color: black;
+}
+
+.carousel-caption.d-none.d-md-block p {
+    color: black;
+=======
 }
 
 h5.card-title {
@@ -397,5 +414,5 @@ h5.card-title {
     }
     .navbar {
         display: none;
-    }
+  }
 }
