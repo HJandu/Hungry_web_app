@@ -1,5 +1,6 @@
-const apiKey = "a2ea6436918641a693f624d3818a0438";
+const apiKey = "02e510b688604f75a1435db0869596e2";
 const recipeDetails = document.getElementById("recipeDetails");
+
 
 // display the chosen recipe details
 function displayRecipe() {
@@ -16,19 +17,19 @@ function displayRecipe() {
         <p class="card-text">Ready in Minutes: ${fullRecipe.readyInMinutes}</p>
         <p class="card-text">Ingredients:</p>
         <ul class="list-group list-group-flush">${fullRecipe.extendedIngredients.map((ingredient) => {
-            return `<li class="list-group-item">${ingredient.original}</li>`;
-          }
-        ).join("")}</ul>        
+    return `<li class="list-group-item">${ingredient.original}</li>`;
+  }
+  ).join("")}</ul>        
       </div>
     </div>
   </div>
 </div>`;
-const instructionsTemplate = `<div class="card border border-0">
+  const instructionsTemplate = `<div class="card border border-0">
 <div class="card-body">
   <h5 class="card-title">Instructions</h5>
         <p class="card-text">${fullRecipe.analyzedInstructions[0].steps.map((step) => {
-            return `<p class="card-text">${step.number}. ${step.step}</p>`;
-          }).join("")}</p>
+    return `<p class="card-text">${step.number}. ${step.step}</p>`;
+  }).join("")}</p>
         <p class="card-text"></p>
         <p class="card-text">Diets: ${fullRecipe.diets}</p>
         <p class="card-text">Number of Servings: ${fullRecipe.servings}</p>
@@ -47,37 +48,38 @@ function singleRecipe(event) {
   getPricing(event.target.value);
   getNutrition(event.target.value);
   getSimilar(event.target.value);
+  fetchVideoByTitle(event.target.value);
 }
 
 // function to get price breakdown for chosen recipe
 async function getPricing(callId) {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const priceId = fullRecipe.id;
- 
+
   let priceURL = "https://api.spoonacular.com/recipes/" + priceId + "/priceBreakdownWidget.json?apiKey=" + apiKey;
 
   try {
-      var response = await fetch(priceURL);
-      var data = await response.json();
-      console.log(data);
-      let priceTemplate = `<div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card border border-0">
+    var response = await fetch(priceURL);
+    var data = await response.json();
+    console.log(data);
+    // <div class="col-sm-6 mb-3 mb-sm-0">
+    let priceTemplate = `<div class="card border border-0">
           <div class="card-body">
             <h5 class="card-title">Price Breakdown</h5>
             <p class="card-text">${data.ingredients.map((ingredient) => {
-              return `<p class="card-text">${ingredient.name}: $${ingredient.price}</p>`;
-            }).join("")}</p>
+      return `<p class="card-text">${ingredient.name}: $${ingredient.price}</p>`;
+    }).join("")}</p>
             <p class="card-text">Total Cost: $${data.totalCost}</p>
             <p class="card-text">Total Cost Per Serving: $${data.totalCostPerServing}</p>
           </div>
         </div>
       </div>`
-      //create a div to hold the price breakdown
+    //create a div to hold the price breakdown
 
-     
-      document.getElementById("price").innerHTML = priceTemplate;
-    } catch (error) {
-      console.error(error);
+
+    document.getElementById("price").innerHTML = priceTemplate;
+  } catch (error) {
+    console.error(error);
   }
   // return data;
 }
@@ -87,14 +89,14 @@ getPricing();
 async function getNutrition(callId) {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const nutritionId = fullRecipe.id;
- 
-  let nutURL = "https://api.spoonacular.com/recipes/" + nutritionId + "/nutritionWidget.json?apiKey=" + apiKey; 
+
+  let nutURL = "https://api.spoonacular.com/recipes/" + nutritionId + "/nutritionWidget.json?apiKey=" + apiKey;
 
   try {
-      var response = await fetch(nutURL);
-      var data = await response.json();
-      console.log(data);
-      let nutritionTemplate = `<div class="card border border-0">
+    var response = await fetch(nutURL);
+    var data = await response.json();
+    console.log(data);
+    let nutritionTemplate = `<div class="card border border-0">
           <div class="card-body">
             <h5 class="card-title">Nutrition per Serving</h5>
             <p class="card-text">Calories: ${data.calories}</p>
@@ -105,9 +107,9 @@ async function getNutrition(callId) {
           </div>
         </div>
       </div>`
-      document.getElementById("nut-chart").innerHTML = nutritionTemplate;
-    } catch (error) {
-      console.error(error);
+    document.getElementById("nut-chart").innerHTML = nutritionTemplate;
+  } catch (error) {
+    console.error(error);
   }
   // return data;
 }
@@ -115,17 +117,19 @@ getNutrition();
 
 
 // function to get similar recipes
+// import getRecipe from "./script.js";
 async function getSimilar(callId) {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const similarRecipesId = fullRecipe.id;
 
   let similarRecipesURL = "https://api.spoonacular.com/recipes/" + similarRecipesId + "/similar?apiKey=" + apiKey;
-  
+
   try {
-      var response = await fetch(similarRecipesURL);
-      var data = await response.json();
-      console.log(data);
-      let similarRecipesTemplate = `<div id="carouselExampleCaptions" class="carousel slide">
+    var response = await fetch(similarRecipesURL);
+    var data = await response.json();
+    console.log(data);
+    let similarRecipesTemplate = 
+    `<div id="carouselExampleCaptions" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -133,7 +137,7 @@ async function getSimilar(callId) {
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./images/food-dwc-4.jpg" class="d-block w-100" alt="golden syrup on pancakes">
+          <img src="images/slide-1.jpg" class="d-block w-100" alt="fruit and veg border">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[0].title}</h5>
             <p>Ready in Minutes: ${data[0].readyInMinutes}</p>
@@ -141,7 +145,7 @@ async function getSimilar(callId) {
           </div>
         </div>
         <div class="carousel-item">
-          <img src=${data[2].sourceUrl} class="d-block w-100" alt="...">
+          <img src="images/slide-2.jpg" class="d-block w-100" alt="fruit and veg border">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[1].title}</h5>
             <p>Ready in Minutes: ${data[1].readyInMinutes}</p>
@@ -149,7 +153,7 @@ async function getSimilar(callId) {
           </div>
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
+          <img src="images/slide-4." class="d-block w-100" alt="fruit and veg border">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[2].title}</h5>
             <p>Ready in Minutes: ${data[2].readyInMinutes}</p>
@@ -167,10 +171,53 @@ async function getSimilar(callId) {
       </button>
     </div>`
     document.getElementById("similar-recipes").innerHTML = similarRecipesTemplate;
-    } catch (error) {
-      console.error(error);
+    
+  } catch (error) {
+    console.error(error);
   }
   // return data;
 }
 getSimilar();
 
+// loops through getRecipe and displays the similar recipe
+function similarRecipe(event) {
+  console.log(event.target);
+  getRecipe(event.target.value);
+}
+
+
+// Purpose: To fetch and display YouTube videos based on user input
+
+
+async function fetchVideoByTitle() {
+  const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
+  const recipeTitle = fullRecipe.title;
+  const apiKey = "AIzaSyDXooxlyHl4mGqu_QKC2kfxg5Xo9dnmU68";
+  const youTubeUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${recipeTitle}&type=video&key=${apiKey}`;
+
+  try {
+    const response = await fetch(youTubeUrl);
+    if (!response.ok) {
+      throw new Error('Failed to fetch video');
+    }
+
+    const data = await response.json();
+    if (data.items.length === 0) {
+      throw new Error('Video not found');
+    }
+    console.log(data);
+
+    const videoId = data.items[0].id.videoId;
+    console.log(videoId);
+    let videoTemplate = `<iframe width="560" height="315" src="https://www.youtube.com/embed/ABC123" frameborder="0" allowfullscreen></iframe>`;
+    videoTemplate = videoTemplate.replace("ABC123", videoId);
+
+    document.getElementById("video").innerHTML = videoTemplate;
+    // const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+  } catch (error) {
+    console.error(error);
+  }
+  // return data;
+};
+
+fetchVideoByTitle();
