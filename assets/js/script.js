@@ -1,4 +1,4 @@
-const apiKey = "a2ea6436918641a693f624d3818a0438";
+const apiKey = "02e510b688604f75a1435db0869596e2";
 
 const searchBtn = document.getElementById("searchBtn");
 
@@ -46,7 +46,7 @@ async function fetchDataApi(event) {
 // function to display popular recipes
 async function fetchPopular() {
     // event.preventDefault();
-    const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=6";
+    const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=4";
 
     console.log(randomURL);
 
@@ -62,12 +62,12 @@ async function fetchPopular() {
         let template = ""; // initialize template variable
         for (let i = 0; i < dataCollected.recipes.length; i++) {
             const recipe = dataCollected.recipes[i];
-            template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
+            template += `<div class="card col-sm-6 mb-3 mb-sm-0" style="width: 300px;" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
               <h5 class="card-title
                 ">${recipe.title}</h5>
-                <p class="card-text">Likes: ${recipe.servings}</p>
+                <p class="card-text">Servings: ${recipe.servings}</p>
                 <button value="${recipe.id}" onclick="randomRecipe(event)" class="btn btn-primary">View Recipe</button>
                 </div>
                 </div>`;

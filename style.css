@@ -131,7 +131,7 @@ header {
 .row{
     display: flex;
     margin-top: 60px;
-    background-color: rgba(0, 0, 0, 0.377);
+    /* background-color: rgba(0, 0, 0, 0.377); */
 }
 
 #recipe-row, #recipeInfo {
@@ -174,3 +174,19 @@ header {
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
 } 
+
+/* styling the carousel */
+.carousel.slide {
+    
+    display: flex;
+    margin-top: 10px;
+    width: 800px;
+}
+
+.carousel-caption.d-none.d-md-block h5 {
+    color: black;
+}
+
+.carousel-caption.d-none.d-md-block p {
+    color: black;
+}
