@@ -1,5 +1,4 @@
 # front-end-project1
-
-HTML
-CSS
-javaScript
+<p align="center">
+<img src="/images/hungry-banner.jpg"
+/p>
