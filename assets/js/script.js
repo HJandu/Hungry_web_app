@@ -25,6 +25,8 @@ async function fetchDataApi(event) {
 
         const result = await response.json();
         console.log(result);
+        var recipeT= document.getElementById("recipeTitle");
+        recipeT.innerHTML = "recipe";
         let template = ``;
         result.forEach((recipe) => {
             template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
