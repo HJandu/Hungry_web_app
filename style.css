@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
 
 * {
     box-sizing: border-box;
@@ -319,7 +319,6 @@ header {
     background-color:white;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-   
     display: flex;
     font-size: 12px;
     line-height: 22px;
@@ -506,10 +505,10 @@ h5.card-title {
     h1 {
         font-size: 2.5rem;
     }
-    .recipe input {
+    /* .recipe input {
         width: 300px;
         padding: 16px 40px 16px 15px;
-    }
+    } */
     ::placeholder {
         font-size: 10px;
     }
