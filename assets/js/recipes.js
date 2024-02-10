@@ -178,7 +178,7 @@ async function getSimilar(callId) {
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/slide-4." class="d-block w-100" alt="fruit and veg border">
+          <img src="images/slide-3.jpg" class="d-block w-100" alt="fruit and veg border">
           <div class="carousel-caption d-none d-md-block">
             <h5>${data[2].title}</h5>
             <p>Ready in Minutes: ${data[2].readyInMinutes}</p>
