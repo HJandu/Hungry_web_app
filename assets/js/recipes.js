@@ -1,6 +1,29 @@
+
 const apiKey = "9068e60baae149d597f8da27d444e3e3";
 const recipeDetails = document.getElementById("recipeDetails");
 
+// copied function from script.js
+// function to get recipe information
+async function getRecipe(callId) {
+  var queryId = "https://api.spoonacular.com/recipes/" + callId + "/information?apiKey=" + apiKey;
+
+  try {
+    var response = await fetch(queryId);
+    var data = await response.json();
+    console.log(data);
+    // save data to local storage
+    window.localStorage.setItem("recipe", JSON.stringify(data));
+    displayRecipe();
+    getPricing();
+    getNutrition();
+    getSimilar();
+    fetchVideoByTitle();    
+
+  } catch (error) {
+    console.error(error);
+
+  }
+}
 
 // display the chosen recipe details
 function displayRecipe() {
@@ -35,21 +58,27 @@ function displayRecipe() {
         <p class="card-text">Number of Servings: ${fullRecipe.servings}</p>
 </div>
 </div>`
+  // if there is no image, display a default image
+  if (fullRecipe.image === null) {
+    fullRecipe.image = "./images/coming-soon.jpg";
+  }
+  // if there are no instructions, diet and serving info, then display a message
+  if (fullRecipe.analyzedInstructions.steps === 0) {
+    fullRecipe.analyzedInstructions.steps = "No instructions available for this recipe. Please view the recipe on the youTube video";
+  }
+  if (fullRecipe.diets === null) {
+    fullRecipe.diets = "No dietary information available for this recipe.";
+  }
+  if (fullRecipe.servings === null) {
+    fullRecipe.servings = "No serving information available for this recipe.";
+  }
+
 
   document.getElementById("recipeInfo").innerHTML = recipeTemplate;
   document.getElementById("instructions").innerHTML = instructionsTemplate;
 }
 displayRecipe();
 
-// function to display the different recipe details
-function singleRecipe(event) {
-  console.log(event.target);
-  getRecipe(event.target.value);
-  getPricing(event.target.value);
-  getNutrition(event.target.value);
-  getSimilar(event.target.value);
-  fetchVideoByTitle(event.target.value);
-}
 
 // function to get price breakdown for chosen recipe
 async function getPricing(callId) {
@@ -74,14 +103,10 @@ async function getPricing(callId) {
           </div>
         </div>
       </div>`
-    //create a div to hold the price breakdown
-
-
     document.getElementById("price").innerHTML = priceTemplate;
   } catch (error) {
     console.error(error);
   }
-  // return data;
 }
 getPricing();
 
@@ -111,13 +136,11 @@ async function getNutrition(callId) {
   } catch (error) {
     console.error(error);
   }
-  // return data;
 }
 getNutrition();
 
 
-// function to get similar recipes
-// import getRecipe from "./script.js";
+// function to get similar recipes 
 async function getSimilar(callId) {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const similarRecipesId = fullRecipe.id;
@@ -128,8 +151,8 @@ async function getSimilar(callId) {
     var response = await fetch(similarRecipesURL);
     var data = await response.json();
     console.log(data);
-    let similarRecipesTemplate = 
-    `<div id="carouselExampleCaptions" class="carousel slide">
+    let similarRecipesTemplate =
+      `<div id="carouselExampleCaptions" class="carousel slide ">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -142,6 +165,7 @@ async function getSimilar(callId) {
             <h5>${data[0].title}</h5>
             <p>Ready in Minutes: ${data[0].readyInMinutes}</p>
             <p>Number of Servings: ${data[0].servings}</p>
+            <button value="${data[0].id}" onclick="similarRecipe(event)" class="btn btn-primary">View Recipe</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -150,6 +174,7 @@ async function getSimilar(callId) {
             <h5>${data[1].title}</h5>
             <p>Ready in Minutes: ${data[1].readyInMinutes}</p>
             <p>Number of Servings: ${data[1].servings}</p>
+            <button value="${data[1].id}" onclick="similarRecipe(event)" class="btn btn-primary">View Recipe</button>
           </div>
         </div>
         <div class="carousel-item">
@@ -158,6 +183,7 @@ async function getSimilar(callId) {
             <h5>${data[2].title}</h5>
             <p>Ready in Minutes: ${data[2].readyInMinutes}</p>
             <p>Number of Servings: ${data[2].servings}</p>
+            <button value="${data[2].id}" onclick="similarRecipe(event)" class="btn btn-primary">View Recipe</button>
           </div>
         </div>
       </div>
@@ -171,24 +197,16 @@ async function getSimilar(callId) {
       </button>
     </div>`
     document.getElementById("similar-recipes").innerHTML = similarRecipesTemplate;
-    
+
   } catch (error) {
     console.error(error);
   }
-  // return data;
 }
 getSimilar();
 
-// loops through getRecipe and displays the similar recipe
-function similarRecipe(event) {
-  console.log(event.target);
-  getRecipe(event.target.value);
-}
 
 
 // Purpose: To fetch and display YouTube videos based on user input
-
-
 async function fetchVideoByTitle() {
   const fullRecipe = JSON.parse(window.localStorage.getItem("recipe"));
   const recipeTitle = fullRecipe.title;
@@ -212,12 +230,24 @@ async function fetchVideoByTitle() {
     let videoTemplate = `<iframe width="560" height="315" src="https://www.youtube.com/embed/ABC123" frameborder="0" allowfullscreen></iframe>`;
     videoTemplate = videoTemplate.replace("ABC123", videoId);
 
+
     document.getElementById("video").innerHTML = videoTemplate;
     // const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
   } catch (error) {
     console.error(error);
   }
-  // return data;
 };
-
 fetchVideoByTitle();
+
+// function to get recipe information
+async function similarRecipe(event) {
+  console.log(event.target);
+  // Clear localStorage
+  window.localStorage.removeItem("recipe");
+  getRecipe(event.target.value);
+  displayRecipe(event.target.value);
+  getPricing(event.target.value);
+  getNutrition(event.target.value);
+  getSimilar(event.target.value);
+  fetchVideoByTitle(event.target.value);
+}

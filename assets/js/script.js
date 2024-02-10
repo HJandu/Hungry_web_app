@@ -1,3 +1,4 @@
+
 const apiKey = "9068e60baae149d597f8da27d444e3e3";
 const searchBtn = document.getElementById("searchBtn");
 
@@ -13,7 +14,6 @@ async function fetchDataApi(event) {
     }
     const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue;
 
-    // const randomURL = "https://api.spoonacular.com/recipes/random?apiKey=" + apiKey + "&number=5";
 
     console.log(queryURL);
 
@@ -103,25 +103,11 @@ async function getRecipe(callId) {
         console.log(data);
         // save data to local storage
         window.localStorage.setItem("recipe", JSON.stringify(data));
-
-        //   let recipeTemplate = `<div class="card mb-3">
-        //   <img src=${data.image} class="card-img-top" alt=${data.title}>
-        //   <div class="card-body">
-        //     <h5 class="card-title">${data.title}</h5>
-        //     <p class="card-text">${data.summary}</p>
-        //     ${data.analyzedInstructions[0].steps.map((step) => {
-        //       return `<p class="card-text">${step.number}. ${step.step}</p>`;   
-        //     }).join("")}
-        //   </div>
-        // </div>`;
         window.location.href = "./recipes.html";
-        // document.getElementById("full-recipe").innerHTML = recipeTemplate;
     } catch (error) {
         console.error(error);
 
     }
-
-    // return data;
 }
 
 searchBtn.addEventListener("click", fetchDataApi);
