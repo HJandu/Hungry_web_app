@@ -1,9 +1,9 @@
-const apiKey = "a2ea6436918641a693f624d3818a0438";
+const apiKey = "9068e60baae149d597f8da27d444e3e3";
 const searchBtn = document.getElementById("searchBtn");
 
 
 
-// function to reccomened recipes based on ingredients
+// function to recommended recipes based on ingredients
 async function fetchDataApi(event) {
     event.preventDefault();
     const inputValue = document.getElementById("query").value.trim();
@@ -24,16 +24,18 @@ async function fetchDataApi(event) {
 
         const result = await response.json();
         console.log(result);
+        var recipeT= document.getElementById("recipeTitle");
+        recipeT.innerHTML = "recipe";
         let template = ``;
         result.forEach((recipe) => {
             template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
-              <h5 class="card-title">${recipe.title}</h5>
-              <p class="card-text">Likes: ${recipe.likes}</p>
-              <button value="${recipe.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
+                <h5 class="card-title">${recipe.title}</h5>
+                <p class="card-text">Likes: ${recipe.likes}</p>
+                <button value="${recipe.id}" onclick="singleRecipe(event)" class="btn btn-primary">View Recipe</button>
             </div>
-          </div>`;
+            </div>`;
         });
         document.getElementById("row-test").innerHTML = template;
     } catch (error) {
@@ -63,7 +65,7 @@ async function fetchPopular() {
             template += `<div class="card col-sm-6 mb-3 mb-sm-0" style="width: 300px;" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
-              <h5 class="card-title
+            <h5 class="card-title
                 ">${recipe.title}</h5>
                 <p class="card-text">Servings: ${recipe.servings}</p>
                 <button value="${recipe.id}" onclick="randomRecipe(event)" class="btn btn-primary">View Recipe</button>
@@ -71,7 +73,7 @@ async function fetchPopular() {
                 </div>`;
         }
         document.getElementById("popularRecipes").innerHTML = template;
-        
+
     } catch (error) {
         console.error(error.message);
     }

@@ -16,20 +16,34 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>HUNGRY!</h1>
-            <h3>
-                <nav>
-                    <ul class="navbar">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">My Recipes</a></li>
-                        <li><a href="https://github.com/HJandu/front-end-project1">About Us</a></li>
-                    </ul>
-            </h3>
-            <!-- <a href="#" class="h-btn"> -->
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <h1>WHO'S HUNGRY?</h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">My Recipes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="https://github.com/HJandu/front-end-project1">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </header>
         <!-- <div id="header" class="chosen-recipe">
-        <h4>Here is your chosen recipe. <br>
+        <<h4>Here is your chosen recipe. <br>
             Enjoy!</h4> -->
         <a href="index.html"><button class="backBtn">Back to Homepage</button></a>
     </div>
@@ -37,7 +51,7 @@
         <div class="row" id="recipeInfo">
 
         </div>
-        <!-- display nutrition and price breakdown information -->
+        <!-- display nutrition and price breakdown information
         <div class="row">
             <div id="instructions" class="col-sm-12 col-md-8">
 
@@ -57,29 +71,21 @@
             </div>
 
         </div>
-        
+
         <!-- display similar recipes -->
         <div id="similar">
             <h3>Similar Recipes</h3>
             <div class="row" id="similar-recipes">
-
             </div>
-
         </div>
 
-
-
-
-
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-        <script src="https://apis.google.com/js/api.js"></script>
-        <script src="./assets/js/recipes.js"></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
+            <script src="https://apis.google.com/js/api.js"></script>
+            <script src="./assets/js/recipes.js"></script>
 </body>
 
 </html>
