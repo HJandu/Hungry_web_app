@@ -24,11 +24,9 @@ async function fetchDataApi(event) {
 
         const result = await response.json();
         console.log(result);
-        var recipeT= document.getElementById("recipeTitle");
-        recipeT.innerHTML = "recipe";
         let template = ``;
         result.forEach((recipe) => {
-            template += `<div class="card col-sm-12 col-md-6" style="width: 500px;" >
+            template += `<div class="card border border-0 col-sm-12 col-md-6" style="width: 500px;" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
                 <h5 class="card-title">${recipe.title}</h5>
@@ -62,7 +60,7 @@ async function fetchPopular() {
         let template = ""; // initialize template variable
         for (let i = 0; i < dataCollected.recipes.length; i++) {
             const recipe = dataCollected.recipes[i];
-            template += `<div class="card col-sm-6 mb-3 mb-sm-0" style="width: 300px;" >
+            template += `<div class="card border border-0 col-sm-6 mb-3 mb-sm-0" style="width: 300px;" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
             <h5 class="card-title

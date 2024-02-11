@@ -72,7 +72,6 @@ function displayRecipe() {
     fullRecipe.servings = "No serving information available for this recipe.";
   }
 
-
   document.getElementById("recipeInfo").innerHTML = recipeTemplate;
   document.getElementById("instructions").innerHTML = instructionsTemplate;
 }
