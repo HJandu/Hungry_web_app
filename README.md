@@ -2,42 +2,68 @@
 <img src="/images/hungry-banner.jpg"
 /p>
 
-# Description
-Hungry! a responsive Recipe Finder the allows users to input ingredients they find at home to generate a recipe. The website is very intuitive, easy to use, and user friendly. This website is completely responsive on both a desktop and mobile.
+# User Story
+Healthy nutrition can be hard to achieve with a busy schedule… ‘Hungry!’ is here to fight for your health! A poll of 2,000 adults found more than half want to eat healthily, but are hindered by their hectic lifestyles (surveyed by the Mirror). 'Hungry!' is an app designed for those who need ideas for recipes, based on the ingredients they have at hand or in their fridge. 
 
 # Wireframe
+The Wireframe was created using figma. See images of the wireframe below. <br>
+Mobile view.
 
-# Features
-Feature 1 –
+![Screenshot 2024-02-10 174723](https://github.com/HJandu/Hungry_web_app/assets/116304118/8829b58a-7ff2-4039-8b6e-6a787ee700ff)
 
-Feature 2 –
 
-Feature 3 –
+Desktop view.
 
-Feature 4 –
+![Screenshot 2024-02-10 175108](https://github.com/HJandu/Hungry_web_app/assets/116304118/fbc9b444-ac18-4386-b020-8901774d0305)
 
-# Screenshot
+![Screenshot 2024-02-10 175052](https://github.com/HJandu/Hungry_web_app/assets/116304118/8213a298-b59c-45f2-88ce-6681f0aa9992)
+
+
+# Description
+Hungry! A responsive Recipe Finder the allows users to input ingredients they find at home to generate a recipe. The website is very intuitive, easy to use, and user friendly. This website is completely responsive on both a desktop and mobile. 
+
+## Features
+
+   ### Home Screen
+When the user opens the app, they will see top recommended recipes to choose from, or they can input the ingredients they have into the search box to view relevant recipes. 
+
+### Recipes output
+The app will show the user different recipes with the specified ingredients. 
+
+### Recipe Screen
+Once the user has selected a recipe to view, they will be shown the ingredients, instructions, the nutrition detail and a price breakdown for those who are on a budget. 
+
+### LocalStorage
+The chosen recipe is stored on the localStorage, so the user can save it into their folder, for future reference. 
+
+### Related video
+If the user wishes to view the recipe being cooked in action, then there is a similar recipe video to watch. 
+
+### Similar recipes
+Fancy something different? The app will suggest similar recipes at the bottom of the chosen recipe. The user can select any recipe from the similar recipes to view the instructions or related recipe video. 
 
 # Installations
+Two API key's are required to run this code. 
+Please click [here](https://spoonacular.com/food-api) to register for a Spoonacular API key. <br> 
+Refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys) to help create an API key. <br>
+Please click [here](https://developers.google.com/youtube/v3/getting-started) to register for a youTube api key. To access a related video, click [here](https://www.youtube.com/watch?v=uz7dY8qTFJw).
 
-# Technologies Used: HTML CSS Javascript Git Github VS Code Google Chrome Developer tools SpoonacularAPI Trello Figma jQuery Bootstrap
-This website was creating using VS Code, a local git directory was used for version control, and then uploaded to GitHub. We have made it live using Git pages. To do this we initiated the git repository with 'git innit', then used 'git status' to see which of my un-tracked files had not been added to the new repository. We used 'git commit -m "added in a specific message" to commit our changed files to the repository. Once our files were committed we used 'git push' to push all our new and changed files to GitHub before making it live with Git pages.
-
-# Testing:
+# Technologies Used 
+HTML, CSS, Javascript, Github, VS Code, Google Chrome Developer tools, Trello, Figma, jQuery, Bootstrap
 
 # Credits
-Collaborators
-Shamsul Hardip Noah Victoria
-
-References
-Media
-
-• The photos used in this site were obtained from pexels.
+* All recipes and related information has been retrived from Spoonaular using the API key.
+* All related video's have been obtained from youTube, using Google Developer API.
+• Home screen picture was obtained from pexels.
 
 # Deployment
+Click [here] and input your ingredients to see what recipes you could be cooking tonight!  
+
+# Collaborators 
+[Hardip Jandu](https://github.com/HJandu) <br>
+[Victoria Adeyemi](https://github.com/victoriadeyemi) <br>
+[Noah Omose](https://github.com/NO1797) <br>
+[Shamsul Ali](https://github.com/code120798)
 
 # License
-
-
-
-
+Licensed by MIT License. &copy;Hardip Jandu &copy;Victoria Adeyemi  &copy;Shamsul Ali  &copy;Noah Omose
