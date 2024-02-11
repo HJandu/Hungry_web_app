@@ -1,4 +1,4 @@
-const apiKey = "9068e60baae149d597f8da27d444e3e3";
+const apiKey = "a30e63b957014f2d9735e62145cf010c";
 const recipeDetails = document.getElementById("recipeDetails");
 
 // copied function from script.js
@@ -16,7 +16,7 @@ async function getRecipe(callId) {
     getPricing();
     getNutrition();
     getSimilar();
-    fetchVideoByTitle();    
+    fetchVideoByTitle();
 
   } catch (error) {
     console.error(error);
@@ -149,8 +149,7 @@ async function getSimilar(callId) {
     var response = await fetch(similarRecipesURL);
     var data = await response.json();
     console.log(data);
-    let similarRecipesTemplate =
-      `<div id="carouselExampleCaptions" class="carousel slide ">
+    let similarRecipesTemplate = `<div id="carouselExampleCaptions" class="carousel slide ">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
