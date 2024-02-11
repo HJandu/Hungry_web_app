@@ -79,4 +79,4 @@ Click [here] and input your ingredients to see what recipes you could be cooking
 [Shamsul Ali](https://github.com/code120798)
 
 ## <a id="lic-header"></a>License
-Licensed by MIT License. &copy;Hardip Jandu &copy;Victoria Adeyemi  &copy;Shamsul Ali  &copy;Noah Omose
+Licensed by [MIT](https://github.com/HJandu/Hungry_web_app/tree/main?tab=MIT-1-ov-file) License. &copy;Hardip Jandu &copy;Victoria Adeyemi  &copy;Shamsul Ali  &copy;Noah Omose
