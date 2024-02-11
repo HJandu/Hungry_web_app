@@ -126,10 +126,10 @@ h3 {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
 }
 
-.carousel-item {
+/* .carousel-item {
     display: flex;
     justify-content: center;
-}
+} */
 
 h5.card-title {
     color: rgb(40, 59, 7);
@@ -143,17 +143,19 @@ h5.card-title {
 }
 
 
-.carousel.slide {
+/* .carousel.slide {
     display: flex;
     margin-top: 40px;
     width: 800px;
-}
+    margin-left: 250px;
+} */
+
 .carousel-caption.d-none.d-md-block h5 {
     color: black;
 }
 .carousel-caption.d-none.d-md-block p {
     color: black;
-}
+} 
 
 @media (max-width: 600px) {
     h1 {
