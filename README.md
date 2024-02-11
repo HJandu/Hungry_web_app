@@ -11,7 +11,7 @@
 * [Technologies used](#tech-header)
 * [Credits](#cred-header)
 * [Deployment](#deploy-header)
-* [Collaborators](#coll-header)
+* [Team](#coll-header)
 * [License](#lic-header)
 
 
@@ -32,7 +32,7 @@ Desktop view.
 ![Screenshot 2024-02-10 175052](https://github.com/HJandu/Hungry_web_app/assets/116304118/8213a298-b59c-45f2-88ce-6681f0aa9992)
 
 
-# <a id="descr-header"></a>Description
+## <a id="descr-header"></a>Description
 Hungry! A responsive Recipe Finder the allows users to input ingredients they find at home to generate a recipe. The website is very intuitive, easy to use, and user friendly. This website is completely responsive on both a desktop and mobile. 
 
 ## <a id="feat-header"></a>Features
@@ -55,28 +55,28 @@ If the user wishes to view the recipe being cooked in action, then there is a si
 ### Similar recipes
 Fancy something different? The app will suggest similar recipes at the bottom of the chosen recipe. The user can select any recipe from the similar recipes to view the instructions or related recipe video. 
 
-# <a id="install-header"></a>Installation
+## <a id="install-header"></a>Installation
 Two API key's are required to run this code. 
 Please click [here](https://spoonacular.com/food-api) to register for a Spoonacular API key. <br> 
 Refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys) to help create an API key. <br>
 Please click [here](https://developers.google.com/youtube/v3/getting-started) to register for a youTube api key. To access a related video, click [here](https://www.youtube.com/watch?v=uz7dY8qTFJw).
 
-# <a id="tech-header"></a>Technologies Used 
+## <a id="tech-header"></a>Technologies Used 
 HTML, CSS, Javascript, Github, VS Code, Google Chrome Developer tools, Trello, Figma, jQuery, Bootstrap
 
-# <a id="cred-header"></a>Credits
+## <a id="cred-header"></a>Credits
 * All recipes and related information has been retrived from Spoonaular using the API key.
 * All related video's have been obtained from youTube, using Google Developer API.
 • Home screen picture was obtained from pexels.
 
-# <a id="deploy-header"></a>Deployment
+## <a id="deploy-header"></a>Deployment
 Click [here] and input your ingredients to see what recipes you could be cooking tonight!  
 
-# <a id="coll-header"></a>Collaborators 
+## <a id="coll-header"></a>Team 
 [Hardip Jandu](https://github.com/HJandu) <br>
 [Victoria Adeyemi](https://github.com/victoriadeyemi) <br>
 [Noah Omose](https://github.com/NO1797) <br>
 [Shamsul Ali](https://github.com/code120798)
 
-# <a id="lic-header"></a>License
+## <a id="lic-header"></a>License
 Licensed by MIT License. &copy;Hardip Jandu &copy;Victoria Adeyemi  &copy;Shamsul Ali  &copy;Noah Omose
