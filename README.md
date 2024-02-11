@@ -15,10 +15,10 @@
 * [License](#lic-header)
 
 
-# <a id="userstory-header"></a>User Story
+## <a id="userstory-header"></a>User Story
 Healthy nutrition can be hard to achieve with a busy schedule… ‘Hungry!’ is here to fight for your health! A poll of 2,000 adults found more than half want to eat healthily, but are hindered by their hectic lifestyles (surveyed by the Mirror). 'Hungry!' is an app designed for those who need ideas for recipes, based on the ingredients they have at hand or in their fridge. 
 
-# <a id="wireframe-header"></a>Wireframe
+## <a id="wireframe-header"></a>Wireframe
 The Wireframe was created using figma. See images of the wireframe below. <br>
 Mobile view.
 
@@ -37,22 +37,22 @@ Hungry! A responsive Recipe Finder the allows users to input ingredients they fi
 
 ## <a id="feat-header"></a>Features
 
-   ### Home Screen
+   ### <p align="center">Home Screen</p>
 When the user opens the app, they will see top recommended recipes to choose from, or they can input the ingredients they have into the search box to view relevant recipes. 
 
-### Recipes output
+### <p align="center">Recipes output</p>
 The app will show the user different recipes with the specified ingredients. 
 
-### Recipe Screen
+### <p align="center">Recipe Screen</p>
 Once the user has selected a recipe to view, they will be shown the ingredients, instructions, the nutrition detail and a price breakdown for those who are on a budget. 
 
-### LocalStorage
+### <p align="center">LocalStorage</p>
 The chosen recipe is stored on the localStorage, so the user can save it into their folder, for future reference. 
 
-### Related video
+### <p align="center">Related video</p>
 If the user wishes to view the recipe being cooked in action, then there is a similar recipe video to watch. 
 
-### Similar recipes
+### <p align="center">Similar recipes</p>
 Fancy something different? The app will suggest similar recipes at the bottom of the chosen recipe. The user can select any recipe from the similar recipes to view the instructions or related recipe video. 
 
 ## <a id="install-header"></a>Installation
