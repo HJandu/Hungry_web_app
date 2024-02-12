@@ -40,17 +40,17 @@ Hungry! A responsive Recipe Finder the allows users to input ingredients they fi
    ### <p align="center">Home Screen</p>
 When the user opens the app, they will see top recommended recipes to choose from, or they can input the ingredients they have into the search box to view relevant recipes. 
 
-<img width="90%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/main-homescren.jpg">
+<img width="100%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/main-homescren.jpg">
 
 ### <p align="center">Recipes output</p>
 The app will show the user different recipes with the specified ingredients. 
 
-<img width="90%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/recipes-screen.jpg">
+<img width="100%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/recipes-screen.jpg">
 
 ### <p align="center">Recipe Screen</p>
 Once the user has selected a recipe to view, they will be shown the ingredients, instructions, the nutrition detail and a price breakdown for those who are on a budget. 
 
-<img width="90%" height="800" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/single-recipe-page.jpg">
+<img width="100%" height="800" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/single-recipe-page.jpg">
 
 ### <p align="center">LocalStorage</p>
 The chosen recipe is stored on the localStorage, so the user can save it into their folder, for future reference. 
@@ -65,7 +65,12 @@ If the user wishes to view the recipe being cooked in action, then there is a si
 ### <p align="center">Similar recipes</p>
 Fancy something different? The app will suggest similar recipes at the bottom of the chosen recipe. The user can select any recipe from the similar recipes to view the instructions or related recipe video. 
 
-<img width="90%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/similar-recipes.png">
+<img width="100%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/similar-recipes.png">
+
+### <p align="center">Responsive Screen</p>
+<p align="center">
+<img width="30%" height="700" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/Screenshot-responsive-web-%20mobile.png">
+</p>
 
 ## <a id="install-header"></a>Installation
 Two API key's are required to run this code. 
@@ -82,7 +87,7 @@ HTML, CSS, Javascript, Github, VS Code, Google Chrome Developer tools, Trello, F
 • Home screen picture was obtained from pexels.
 
 ## <a id="deploy-header"></a>Deployment
-Click [here] and input your ingredients to see what recipes you could be cooking tonight!  
+Click [here](https://hjandu.github.io/Hungry_web_app/) and input your ingredients to see what recipes you could be cooking tonight!
 
 ## <a id="coll-header"></a>Team 
 [Hardip Jandu](https://github.com/HJandu) <br>
