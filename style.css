@@ -95,7 +95,7 @@
         justify-content: center;
         /* background-color: rgba(51, 46, 46, 0.534); */
         margin-top: 60px;
-        font-size: x-large;
+        font-size: 40px;
         font-weight: bold;
         color: rgb(40, 59, 7);
         padding: 20px;
@@ -149,6 +149,14 @@
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     }
 
+    .card.border.border-0.col-sm-12.col-md-6{
+        margin-top: 20px;
+    }
+
+    .card-img-top {
+        margin-top: 10px;
+    }
+
     h5.card-title {
         color: rgb(40, 59, 7);
         font-weight: bold;
@@ -157,7 +165,7 @@
     #popularRecipes {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 40px;
+        /* margin-top: 40px; */
     }
 
 

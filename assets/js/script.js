@@ -11,7 +11,7 @@ async function fetchDataApi(event) {
         console.log("Please enter an ingredient");
         return;
     }
-    const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue;
+    const queryURL = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + apiKey + "&ingredients=" + inputValue + "&number=8";
 
 
     console.log(queryURL);
@@ -26,7 +26,7 @@ async function fetchDataApi(event) {
         console.log(result);
         let template = ``;
         result.forEach((recipe) => {
-            template += `<div class="card border border-0 col-sm-12 col-md-6" style="width: 500px;" >
+            template += `<div class="card border border-0 col-sm-12 col-md-6" style="width: 300px;" >
             <img src="${recipe.image}" class="card-img-top" alt="${recipe.title}">
             <div class="card-body">
                 <h5 class="card-title">${recipe.title}</h5>
