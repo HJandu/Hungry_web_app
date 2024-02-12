@@ -152,6 +152,16 @@
         margin-top: 20px;
     }
 
+    .card.border.border-0.col-sm-12.col-md-6 img {
+        border-radius: 10px;
+    }
+    
+    .row {
+        @media screen and (max-width:600px){
+            justify-content: center;
+            }
+    }
+
     .card-img-top {
         margin-top: 10px;
     }
@@ -221,5 +231,6 @@
             flex-direction: column;
             height: 100%;
             width: 100%;
-          }
+        }
     }
+
