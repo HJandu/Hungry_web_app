@@ -1,181 +1,200 @@
     @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
 
-* {
-    box-sizing: border-box;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-#header {
-    display: flex;
-    margin-top: 40px;
-    background-color: rgba(51, 46, 46, 0.534);
-}
+    #header {
+        display: flex;
+        margin-top: 40px;
+        background-color: rgba(51, 46, 46, 0.534);
+    }
 
-h1 {
-    font-family: 'Protest Riot', sans-serif;
-    font-size: 5rem;
-    color: white;
-} 
-
-body {
-    font-family: sans-serif;
-    background-color: white;
-    background-image: url(images/food-dwc-spread.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-ul {
-    list-style: none;
-}
-
-.navbar{
-	display: flex;
-    justify-content: flex-end;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: white;
-}
-
-.navbar li{
-	font-weight: bold;
-	font-size: 1rem;
-	padding: 10px 20px;
-}
-
-.recipe {
-    display: flex;
-    margin-top: 20px;
-}
-
-.recipe input {
-    width: 500px;
-    position: relative;
-    display: flex;
-    outline: none;
-    padding: 16px 16px 16px 15px;
-    border: 2px solid var(--main-color);
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-}
-
-.wrapper {
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#searchBtn {
-    border: none;
-    background-color: white;
-    border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-    display: flex;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 22px;
-    padding: 14px 24px;
-    text-align: center;
-    cursor: pointer;
-}
-
-h3 {
-    display: flex;
-    justify-content: center;
-    /* background-color: rgba(51, 46, 46, 0.534); */
-    margin-top: 60px;
-    font-size: x-large;
-    font-weight:bold;
-    color: rgb(40, 59, 7);
-    padding: 20px;
-}
-
-.row {
-    display: flex;
-    margin-top: 60px;
-    border-radius: 5px;
-    border-width: 1px;
-    justify-content: space-between;
-    background-color: rgba(51, 46, 46, 0.534);
-}
-
-.backBtn {
-    border: none;
-    background-color: white;
-    border-radius: 25px;
-    box-shadow: rgba(22, 12, 12, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-    display: flex;
-    font-size: 12px;
-    line-height: 22px;
-    padding: 14px 24px;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 40px;
-}
-
-.similar-recipes {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    } 
-
-
-.h4 {
-    width: 500px;
-    max-width: 50%;
-    position: relative;
-    display: flex;
-    outline: none;
-    padding: 16px 16px 16px 15px;
-    border: 2px solid var(--main-color);
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-}
-
-
-h5.card-title {
-    color: rgb(40, 59, 7);
-    font-weight: bold;
-}
-
-#popularRecipes {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-
-.carousel-caption.d-none.d-md-block h5 {
-    color: black;
-}
-.carousel-caption.d-none.d-md-block p {
-    color: black;
-} 
-
-@media (max-width: 600px) {
     h1 {
-        font-size: 2.5rem;
+        font-family: 'Protest Riot', sans-serif;
+        font-size: 5rem;
+        color: white;
     }
-    .recipe input {
-        width: 300px;
-        padding: 16px 40px 16px 15px;
-    }
-    ::placeholder {
-        font-size: 10px;
-    }
-}
 
-@media (max-width: 450px) {
-    h1 {
-        font-size: 2rem;
+    body {
+        font-family: sans-serif;
+        background-color: white;
+        background-image: url(images/food-dwc-spread.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
+
+    ul {
+        list-style: none;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar a {
+        color: white;
+    }
+
+    .navbar li {
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .navbar-nav.me-auto.mb-2.mb-lg-0 li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+
+    .navbar-toggler {
+        background-color: white;
+    }
+    .recipe {
+        display: flex;
+        margin-top: 20px;
+    }
+
     .recipe input {
-        width: 300px;
-        padding: 16px 40px 16px 15px;
+        width: 500px;
+        position: relative;
+        display: flex;
+        outline: none;
+        padding: 16px 16px 16px 15px;
+        border: 2px solid var(--main-color);
+        border-radius: 30px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     }
-    ::placeholder {
-        font-size: 10px;
+
+    .wrapper {
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-}
+
+    #searchBtn {
+        border: none;
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+        display: flex;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 22px;
+        padding: 14px 24px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    h3 {
+        display: flex;
+        justify-content: center;
+        /* background-color: rgba(51, 46, 46, 0.534); */
+        margin-top: 60px;
+        font-size: x-large;
+        font-weight: bold;
+        color: rgb(40, 59, 7);
+        padding: 20px;
+    }
+
+    .recipe-output {
+        background-color: rgba(51, 46, 46, 0.534);
+    }
+
+    .row {
+        display: flex;
+        margin-top: 60px;
+        border-radius: 5px;
+        border-width: 1px;
+        justify-content: space-between;
+        height: 100%;
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .backBtn {
+        border: none;
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: rgba(22, 12, 12, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+        display: flex;
+        font-size: 12px;
+        line-height: 22px;
+        padding: 14px 24px;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 40px;
+    }
+
+    .similar-recipes {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .h4 {
+        width: 500px;
+        max-width: 50%;
+        position: relative;
+        display: flex;
+        outline: none;
+        padding: 16px 16px 16px 15px;
+        border: 2px solid var(--main-color);
+        border-radius: 30px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    }
+
+    h5.card-title {
+        color: rgb(40, 59, 7);
+        font-weight: bold;
+    }
+
+    #popularRecipes {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+
+    .carousel-caption.d-none.d-md-block h5 {
+        color: black;
+    }
+
+    .carousel-caption.d-none.d-md-block p {
+        color: black;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .recipe input {
+            width: 300px;
+            padding: 16px 40px 16px 15px;
+        }
+
+        ::placeholder {
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .recipe input {
+            width: 300px;
+            padding: 16px 40px 16px 15px;
+        }
+
+        ::placeholder {
+            font-size: 10px;
+        }
+    }
