@@ -40,20 +40,32 @@ Hungry! A responsive Recipe Finder the allows users to input ingredients they fi
    ### <p align="center">Home Screen</p>
 When the user opens the app, they will see top recommended recipes to choose from, or they can input the ingredients they have into the search box to view relevant recipes. 
 
+<img width="90%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/main-homescren.jpg">
+
 ### <p align="center">Recipes output</p>
 The app will show the user different recipes with the specified ingredients. 
+
+<img width="90%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/recipes-screen.jpg">
 
 ### <p align="center">Recipe Screen</p>
 Once the user has selected a recipe to view, they will be shown the ingredients, instructions, the nutrition detail and a price breakdown for those who are on a budget. 
 
+<img width="90%" height="800" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/single-recipe-page.jpg">
+
 ### <p align="center">LocalStorage</p>
 The chosen recipe is stored on the localStorage, so the user can save it into their folder, for future reference. 
+
+![Screenshot 2024-02-12 032441](https://github.com/HJandu/Hungry_web_app/assets/116304118/afc5bf96-514b-4eeb-aac3-5f630223ccf8)
 
 ### <p align="center">Related video</p>
 If the user wishes to view the recipe being cooked in action, then there is a similar recipe video to watch. 
 
+![Screenshot 2024-02-12 032604](https://github.com/HJandu/Hungry_web_app/assets/116304118/d28592dd-d76f-4204-a7f8-210dbf0d4dd5)
+
 ### <p align="center">Similar recipes</p>
 Fancy something different? The app will suggest similar recipes at the bottom of the chosen recipe. The user can select any recipe from the similar recipes to view the instructions or related recipe video. 
+
+<img width="90%" height="500" src="https://github.com/HJandu/Hungry_web_app/blob/main/images/similar-recipes.png">
 
 ## <a id="install-header"></a>Installation
 Two API key's are required to run this code. 
