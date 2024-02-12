@@ -93,7 +93,6 @@
     h3 {
         display: flex;
         justify-content: center;
-        /* background-color: rgba(51, 46, 46, 0.534); */
         margin-top: 60px;
         font-size: 40px;
         font-weight: bold;
@@ -107,7 +106,7 @@
 
     .row {
         display: flex;
-        margin-top: 60px;
+        margin-top: 40px;
         border-radius: 5px;
         border-width: 1px;
         justify-content: space-between;
@@ -165,7 +164,7 @@
     #popularRecipes {
         display: flex;
         flex-wrap: wrap;
-        /* margin-top: 40px; */
+        margin-top: 0px;
     }
 
 
